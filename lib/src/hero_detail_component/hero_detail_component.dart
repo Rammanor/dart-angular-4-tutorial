@@ -3,8 +3,8 @@ import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 
-import '../hero_service.dart';
-import '../hero.dart';
+import 'package:angular_tour_of_heroes/src/services/hero_service.dart';
+import 'package:angular_tour_of_heroes/src/hero.dart';
 
 @Component(
   selector: 'hero-detail',
@@ -25,6 +25,11 @@ class HeroDetailComponent implements OnInit {
     var _id = _routeParams.get('id');
     var id = int.parse(_id ?? '', onError: (_) => null);
     if (id != null) hero = await (_heroService.getHero(id));
+  }
+
+  Future<Null> save() async {
+    await _heroService.update(hero);
+    goBack();
   }
 
   void goBack() => _location.back();

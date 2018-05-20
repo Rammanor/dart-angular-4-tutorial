@@ -2,7 +2,7 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
 import 'src/dashboard_component/dashboard_component.dart';
-import 'src/hero_service.dart';
+import 'src/services/hero_service.dart';
 import 'src/heroes_component/heroes_component.dart';
 import 'src/hero_detail_component/hero_detail_component.dart';
 
